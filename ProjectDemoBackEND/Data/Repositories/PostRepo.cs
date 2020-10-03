@@ -53,6 +53,11 @@ namespace ProjectDemoBackEND.Data.Repositories
             return await DataContext.Comments.Where(x => x.PostId == postid).CountAsync();
         }
 
+        public async Task<int> GetTotalPost()
+        {
+            return await DataContext.Posts.OrderByDescending(x => x.Id).CountAsync();
+        }
+
         public async Task<string> GetUserName(int userid)
         {
             var user = await DataContext.Users.SingleOrDefaultAsync(x => x.Id == userid);

@@ -15,5 +15,6 @@ namespace ProjectDemoBackEND.Data.IRepositories
 
          Task<List<Post>> GetPostforPaging(int skip, int take);
          Task<List<Post>> GetPostSearch(string keyword);
+         Task<int> GetTotalPost();
     }
 }

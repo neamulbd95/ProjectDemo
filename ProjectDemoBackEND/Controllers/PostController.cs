@@ -143,5 +143,11 @@ namespace ProjectDemoBackEND.Controllers
             return Ok(postListToReturn);
         }
     
+        [HttpGet("GetTotalPost")]
+        public async Task<IActionResult> GetTotalPost()
+        {
+            var response =  await _repo.GetTotalPost();
+            return Ok(response);
+        }
     }
 }
