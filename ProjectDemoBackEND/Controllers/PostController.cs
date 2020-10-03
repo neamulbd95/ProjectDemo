@@ -8,7 +8,6 @@ using ProjectDemoBackEND.DTOs;
 
 namespace ProjectDemoBackEND.Controllers
 {
-    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class PostController : ControllerBase

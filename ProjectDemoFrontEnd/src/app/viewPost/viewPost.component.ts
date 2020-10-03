@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./viewPost.component.scss']
 })
 export class ViewPostComponent implements OnInit {
-
-  constructor() { }
+ values: any;
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
   }
-
+ getPosts(){
+   this.http.get('http://localhost:5030/api/Post/ShowAllThePost').subscribe(response => {
+     this.values = response;
+   }, error =>{
+      console.log(error);
+   }
+   );
+ }
 }

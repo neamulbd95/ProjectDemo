@@ -18,7 +18,7 @@
       <div class="col-md-10">
         <div class="input-group">
             <input type="hidden" name="search_param" value="all" id="search_param">
-            <input type="text" id="searchTxtIdUser" name="nameSearch" class="form-control" placeholder="Search" required />
+            <input type="text" id="searchTxtIdUser" name="nameSearch" class="form-control" placeholder="Search Posts" required />
             <div class="input-group-btn">
                 <button type="submit" class="btn btn-info" name="serachBtn">
                     Search
@@ -29,4 +29,25 @@
       <div class="col-md-1"></div>
   </div>
 </div>
+<br>
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Posts</th>
+        <th scope="col">Owner</th>
+        <th scope="col">Date</th>
+        <th scope="col">TotalComment</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor= "let post of values"> 
+            <th scope="row">{{post.id}}</th>
+            <td>{{post.postContent}}</td>
+            <td>{{post.userName}}</td>
+            <td>{{post.creationTime}}</td>
+            <th scope="col">{{post.totalComments}}</th>
+          </tr>
+    </tbody>
+  </table>
 
